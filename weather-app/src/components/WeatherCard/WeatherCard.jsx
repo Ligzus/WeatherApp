@@ -11,7 +11,7 @@ const WeatherCard = ({ weather }) => {
           alt="weather icon"
         />
       </div>
-      <p>Температура: {weather.temp}°C</p>
+      <p>Температура: {Math.round(weather.temp)}°C</p>
       <p>Скорость ветра: {weather.windSpeed} м/с</p>
       <p>Влажность: {weather.humidity}%</p>
     </div>

@@ -22,12 +22,12 @@ function CityWeather() {
         icon: data.currentData.weather[0].icon,
       });
       setForecastaWeather({
-        temp: data.forecastData.main.temp,
-        windSpeed: data.forecastData.wind.speed,
-        humidity: data.forecastData.main.humidity,
-        icon: data.forecastData.weather[0].icon,
+        temp: data.forecastData.list[index].main.temp,
+        windSpeed: data.forecastData.list[index].wind.speed,
+        humidity: data.forecastData.list[index].main.humidity,
+        icon: data.forecastData.list[index].weather[0].icon,
       });
-      setError("");
+      setError("");     
     } catch (err) {
       if (err.message === "City not found or API error") {
         setError("Упс, кажется где-то опечатка");

@@ -4,18 +4,34 @@
   border-radius: 8px;
   text-align: start;
   margin-top: 30px;
-  min-width: 250px;
+  width: 250px;
+}
+
+.card p {
+  margin: 0;
+}
+
+.card h2 {
+  margin-top: 0;
 }
 
 .city {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  justify-content: space-between;
 }
 
-.card p {
-  font-size: 16px;
-  margin: 5px 0;
+.weather {
+  display: flex;
+}
+
+.weather span {
+  margin-top: 10px;
+}
+
+.temp {
+  font-size: 64px;
+  margin: 0;
+  margin-left: 15px;
 }
 
 .card img {

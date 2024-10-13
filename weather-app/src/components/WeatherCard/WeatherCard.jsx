@@ -18,8 +18,8 @@ const WeatherCard = ({ weather }) => {
         </div>      
       </div>
 
-      <p>Скорость ветра: {weather.windSpeed} м/с</p>
-      <p>Влажность: {weather.humidity}%</p>
+      <p>💨Скорость ветра: {weather.windSpeed} м/с</p>
+      <p>💧Влажность: {weather.humidity}%</p>
     </div>
   );
 };

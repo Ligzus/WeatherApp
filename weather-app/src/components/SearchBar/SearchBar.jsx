@@ -19,6 +19,7 @@ function SearchBar({ onSearch }) {
           placeholder="Где смотрим погоду?"
           value={city}
           onChange={(e) => setCity(e.target.value)}
+          onKeyDown={({ key }) => key === "Enter" && handleSearch()}
         />
         <button onClick={handleSearch}>Поиск</button>
       </div>

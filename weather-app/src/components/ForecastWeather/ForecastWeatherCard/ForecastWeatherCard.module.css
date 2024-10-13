@@ -1,0 +1,43 @@
+.forecast {
+    background-color: #3498db;
+    padding: 8px;
+    border-radius: 8px;
+    text-align: start;
+  }
+  
+  .forecast p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .forecastTemp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .weather {
+    display: flex;
+    width: 45px;
+    justify-content: flex-end;
+  }
+  
+  .weather span {
+    font-size: 10px;
+  }
+  
+  .weather p {
+    font-size: 25px;
+    margin: 0;
+  }
+  
+  .forecast img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .date {
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #dddddd;
+  }

@@ -1,0 +1,31 @@
+.forecastWeather {
+  width: 290px;
+  margin-top: 30px;
+}
+
+.forecastContainer {
+  display: flex;
+  gap: 5px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 10px;
+}
+
+/* Стилизация бегунка прокрутки */
+.forecastContainer::-webkit-scrollbar {
+  height: 5px;
+}
+
+.forecastContainer::-webkit-scrollbar-track {
+  background-color: #3a3a3a;
+  border-radius: 10px;
+}
+
+.forecastContainer::-webkit-scrollbar-thumb {
+  background-color: #616161;
+  border-radius: 10px;
+}
+
+.forecastContainer::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}

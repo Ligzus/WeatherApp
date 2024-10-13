@@ -10,7 +10,7 @@ const WeatherCard = ({ weather }) => {
             src={`http://openweathermap.org/img/wn/${weather.icon}.png`}
             alt="weather icon"
           />
-          <h2>{weather.city.toUpperCase()}</h2>
+          <h3>{weather.city.toUpperCase()}</h3>
         </div>   
         <div className={styles.weather}>
           <p className={styles.temp}>{Math.round(weather.temp)}</p>

@@ -1,15 +1,32 @@
 .container {
   display: flex;
-  min-height: 135px;
   box-sizing: border-box;
   flex-direction: column;
+  gap: 10px;
   align-items: center;
-  padding: 35px 25px;
+  padding: 35px 20px;
 }
 
 .loader {
-    text-align: center;
-    font-size: 18px;
-    color: #585858;
-    margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+  color: #585858;
+  margin-top: 25px;
+}
+
+h2 {
+  margin: 0;
+  padding: 0 20px;
+}
+
+@media(min-width: 920px) {
+  .container {
+    flex-direction: row;
   }
+}
+
+@media(max-width: 486px) {
+  h2 {
+    text-align: center;
+  }
+}

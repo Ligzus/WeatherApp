@@ -3,7 +3,6 @@
   padding: 20px;
   border-radius: 8px;
   text-align: start;
-  margin-top: 30px;
   width: 250px;
 }
 
@@ -11,8 +10,9 @@
   margin: 0;
 }
 
-.card h2 {
+.card h3 {
   margin-top: 0;
+  font-size: 24px;
 }
 
 .city {

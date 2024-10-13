@@ -22,10 +22,9 @@ function CityWeather() {
         humidity: data.currentData.main.humidity,
         icon: data.currentData.weather[0].icon,
       });
-      console.log(data);
       
       // Сохраняем данные на 5 дней прогноза
-      const forecast = data.forecastData.list.slice(0, 5).map(item => ({
+      const forecast = data.forecastArray.map(item => ({
         date: item.dt,
         temp: item.main.temp,
         windSpeed: item.wind.speed,

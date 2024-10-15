@@ -5,7 +5,7 @@
   align-items: center;
   padding-left: calc(50% - 445px);
   padding-right: calc(50% - 445px);
-  margin-bottom: 20px;
+  margin-bottom: 35px;
 }
 
 .cardContainer {
@@ -24,6 +24,7 @@
 h2 {
   margin: 0;
   padding: 35px 5px;
+  font-size: 28px;
 }
 
 @media (min-width: 920px) {

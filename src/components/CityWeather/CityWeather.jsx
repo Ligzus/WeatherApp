@@ -14,6 +14,7 @@ function CityWeather() {
   const fetchWeather = async (city) => {
     setLoading(true);
     try {
+      setError("");
       const data = await getWeather(city);
       setWeather({
         city: city,

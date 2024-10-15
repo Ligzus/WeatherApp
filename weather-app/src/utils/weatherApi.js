@@ -10,20 +10,19 @@ export async function getWeather(city) {
   );
 
   if (!currentWeatherResponse.ok || !forecastResponse.ok) {
-    throw new Error("City not found or API error");
+    throw new Error("Город не найден");
   }
 
   const currentData = await currentWeatherResponse.json();
   const forecastData = await forecastResponse.json();
 
-  // Сгруппировать прогноз по дням, оставив только первый прогноз на каждый день
   const forecastArray = Object.values(
     forecastData.list.reduce((acc, item) => {
-      const date = new Date(item.dt * 1000).toLocaleDateString("en-GB");
-      acc[date] = acc[date] || item; // Добавляем только первый элемент для каждой даты
+      const date = new Date(item.dt * 1000).toLocaleDateString("ru-RU");
+      acc[date] = acc[date] || item;
       return acc;
     }, {}),
-  ).slice(0, 5); // Берем только 5 дней
+  ).slice(1, 6);
 
   return { currentData, forecastArray };
 }
@@ -39,7 +38,7 @@ export async function getDefaultWeather() {
     );
 
     if (responses.some((response) => !response.ok)) {
-      throw new Error("City not found or API error");
+      throw new Error("Город не найден");
     }
 
     const weatherData = await Promise.all(responses.map((res) => res.json()));
@@ -50,6 +49,6 @@ export async function getDefaultWeather() {
       thirdCityData: weatherData[2],
     };
   } catch (error) {
-    throw new Error("City not found or API error");
+    throw new Error("Город не найден");
   }
 }

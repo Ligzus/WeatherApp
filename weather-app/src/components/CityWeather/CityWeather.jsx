@@ -35,7 +35,7 @@ function CityWeather() {
       setForecastWeather(forecast);
       setError("");
     } catch (err) {
-      if (err.message === "City not found or API error") {
+      if (err.message === "Город не найден") {
         setError("Упс, кажется где-то опечатка");
       } else {
         setError("Что-то сломалось, попробуй позже");

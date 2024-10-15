@@ -15,7 +15,6 @@
   justify-content: left;
 }
 
-/* Стилизация бегунка прокрутки */
 .forecastContainer::-webkit-scrollbar {
   height: 5px;
 }

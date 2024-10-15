@@ -5,6 +5,7 @@
   align-items: center;
   padding-left: calc(50% - 445px);
   padding-right: calc(50% - 445px);
+  margin-bottom: 20px;
 }
 
 .cardContainer {

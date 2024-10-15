@@ -21,7 +21,7 @@
 
 .weather {
   display: flex;
-  width: 45px;
+  width: 48px;
   justify-content: flex-end;
 }
 

@@ -1,3 +1,5 @@
+import { DEFAULT_CITIES } from "../constants/cities";
+
 const API_KEY = "58d01c8612f83fc2e68ef14809854068";
 const BASE_URL = "https://api.openweathermap.org/data/2.5/";
 
@@ -28,11 +30,9 @@ export async function getWeather(city) {
 }
 
 export async function getDefaultWeather() {
-  const cities = ["Лондон", "Париж", "Саранск"];
-
   try {
     const responses = await Promise.all(
-      cities.map((city) =>
+      DEFAULT_CITIES.map((city) =>
         fetch(`${BASE_URL}weather?q=${city}&appid=${API_KEY}&units=metric`),
       ),
     );
@@ -41,13 +41,8 @@ export async function getDefaultWeather() {
       throw new Error("Город не найден");
     }
 
-    const weatherData = await Promise.all(responses.map((res) => res.json()));
-
-    return {
-      firstCityData: weatherData[0],
-      secondCityData: weatherData[1],
-      thirdCityData: weatherData[2],
-    };
+    // Возвращаем массив данных о погоде
+    return await Promise.all(responses.map((res) => res.json()));
   } catch (error) {
     throw new Error("Город не найден");
   }

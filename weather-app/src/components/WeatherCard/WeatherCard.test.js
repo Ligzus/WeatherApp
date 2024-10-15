@@ -13,7 +13,7 @@ const mockWeather = {
 };
 
 describe("WeatherCard", () => {
-  test("renders WeatherCard component correctly", () => {
+  test("компонент WeatherCard отображает данные о погоде", () => {
     const { getByText, getByAltText } = render(
       <WeatherCard weather={mockWeather} />,
     );

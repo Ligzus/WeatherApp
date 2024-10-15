@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getDefaultWeather } from "../../utils/weatherApi";
+import { DEFAULT_CITIES } from "../../constants/cities";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import styles from "./DefaultWeather.module.css";
 
@@ -13,29 +14,15 @@ function DefaultWeather() {
       setLoading(true);
       try {
         const data = await getDefaultWeather();
-        setWeather([
-          {
-            city: "Лондон",
-            temp: data.firstCityData.main.temp,
-            windSpeed: data.firstCityData.wind.speed,
-            humidity: data.firstCityData.main.humidity,
-            icon: data.firstCityData.weather[0].icon,
-          },
-          {
-            city: "Париж",
-            temp: data.secondCityData.main.temp,
-            windSpeed: data.secondCityData.wind.speed,
-            humidity: data.secondCityData.main.humidity,
-            icon: data.secondCityData.weather[0].icon,
-          },
-          {
-            city: "Саранск",
-            temp: data.thirdCityData.main.temp,
-            windSpeed: data.thirdCityData.wind.speed,
-            humidity: data.thirdCityData.main.humidity,
-            icon: data.thirdCityData.weather[0].icon,
-          },
-        ]);
+
+        setWeather(DEFAULT_CITIES.map((city, index) => ({
+          city,
+          temp: data[index].main.temp,
+          windSpeed: data[index].wind.speed,
+          humidity: data[index].main.humidity,
+          icon: data[index].weather[0].icon,
+        })));
+
         setError("");
       } catch (err) {
         setError("Что-то сломалось, попробуй позже");
@@ -48,21 +35,19 @@ function DefaultWeather() {
   }, []);
 
   return (
-    <>
-      <div className={styles.container}>
-        <h2>Ты точно мечтаешь тут побывать:</h2>
+    <div className={styles.container}>
+      <h2>Ты точно мечтаешь тут побывать:</h2>
 
-        <div className={styles.cardContainer}>
-          {loading && <p className={styles.loader}>загружаем погоду...</p>}
-          {error && <p className={styles.error}>{error}</p>}
-          {weather.length > 0 &&
-            !loading &&
-            weather.map((cityWeather, index) => (
-              <WeatherCard key={index} weather={cityWeather} />
-            ))}
-        </div>
+      <div className={styles.cardContainer}>
+        {loading && <p className={styles.loader}>загружаем погоду...</p>}
+        {error && <p className={styles.error}>{error}</p>}
+        {weather.length > 0 &&
+          !loading &&
+          weather.map((cityWeather, index) => (
+            <WeatherCard key={index} weather={cityWeather} />
+          ))}
       </div>
-    </>
+    </div>
   );
 }
 

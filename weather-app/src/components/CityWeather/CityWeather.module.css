@@ -3,8 +3,9 @@
   min-height: 135px;
   box-sizing: border-box;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 35px 20px;
+  padding: 35px 0 35px 0;
 }
 
 .loader {

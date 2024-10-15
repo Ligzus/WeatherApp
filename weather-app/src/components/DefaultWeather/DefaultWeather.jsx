@@ -49,13 +49,18 @@ function DefaultWeather() {
 
   return (
     <>
-      <h2>Ты точно мечтаешь тут побывать:</h2>
       <div className={styles.container}>
-        {loading && <p className={styles.loader}>загружаем погоду...</p>}
-        {error && <p className={styles.error}>{error}</p>}
-        {weather.length > 0 && !loading && weather.map((cityWeather, index) => (
-          <WeatherCard key={index} weather={cityWeather} />
-        ))}
+        <h2>Ты точно мечтаешь тут побывать:</h2>
+
+        <div className={styles.cardContainer}>
+          {loading && <p className={styles.loader}>загружаем погоду...</p>}
+          {error && <p className={styles.error}>{error}</p>}
+          {weather.length > 0 &&
+            !loading &&
+            weather.map((cityWeather, index) => (
+              <WeatherCard key={index} weather={cityWeather} />
+            ))}
+        </div>
       </div>
     </>
   );

@@ -7,7 +7,7 @@ function App() {
       <CityWeather />
       <DefaultWeather />
     </>
-  )
+  );
 }
 
 export default App;

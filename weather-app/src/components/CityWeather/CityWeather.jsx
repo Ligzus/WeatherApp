@@ -22,9 +22,9 @@ function CityWeather() {
         humidity: data.currentData.main.humidity,
         icon: data.currentData.weather[0].icon,
       });
-      
+
       // Сохраняем данные на 5 дней прогноза
-      const forecast = data.forecastArray.map(item => ({
+      const forecast = data.forecastArray.map((item) => ({
         date: item.dt,
         temp: item.main.temp,
         windSpeed: item.wind.speed,
@@ -33,7 +33,7 @@ function CityWeather() {
       }));
 
       setForecastWeather(forecast);
-      setError(""); 
+      setError("");
     } catch (err) {
       if (err.message === "City not found or API error") {
         setError("Упс, кажется где-то опечатка");
@@ -51,7 +51,9 @@ function CityWeather() {
       {loading && <p className={styles.loader}>загружаем погоду...</p>}
       {error && <p className={styles.error}>{error}</p>}
       {weather && !loading && <WeatherCard weather={weather} />}
-      {forecastWeather.length > 0 && !loading && <ForecastWeather weather={forecastWeather} />}
+      {forecastWeather.length > 0 && !loading && (
+        <ForecastWeather weather={forecastWeather} />
+      )}
     </div>
   );
 }

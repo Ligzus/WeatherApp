@@ -11,11 +11,11 @@ const WeatherCard = ({ weather }) => {
             alt="weather icon"
           />
           <h3>{weather.city.toUpperCase()}</h3>
-        </div>   
+        </div>
         <div className={styles.weather}>
           <p className={styles.temp}>{Math.round(weather.temp)}</p>
           <span>°C</span>
-        </div>      
+        </div>
       </div>
 
       <p>💨Скорость ветра: {weather.windSpeed} м/с</p>

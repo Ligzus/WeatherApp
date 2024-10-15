@@ -1,14 +1,18 @@
 .forecastWeather {
-  width: 290px;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
   margin-top: 30px;
+  padding: 0px 25px;
+  box-sizing: border-box;
 }
 
 .forecastContainer {
   display: flex;
-  gap: 5px;
+  gap: 8px;
   overflow-x: auto;
-  white-space: nowrap;
   padding-bottom: 10px;
+  justify-content: left;
 }
 
 /* Стилизация бегунка прокрутки */

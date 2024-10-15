@@ -3,10 +3,10 @@ const BASE_URL = "https://api.openweathermap.org/data/2.5/";
 
 export async function getWeather(city) {
   const currentWeatherResponse = await fetch(
-    `${BASE_URL}weather?q=${city}&appid=${API_KEY}&units=metric`
+    `${BASE_URL}weather?q=${city}&appid=${API_KEY}&units=metric`,
   );
   const forecastResponse = await fetch(
-    `${BASE_URL}forecast?q=${city}&appid=${API_KEY}&units=metric`
+    `${BASE_URL}forecast?q=${city}&appid=${API_KEY}&units=metric`,
   );
 
   if (!currentWeatherResponse.ok || !forecastResponse.ok) {
@@ -19,10 +19,10 @@ export async function getWeather(city) {
   // Сгруппировать прогноз по дням, оставив только первый прогноз на каждый день
   const forecastArray = Object.values(
     forecastData.list.reduce((acc, item) => {
-      const date = new Date(item.dt * 1000).toLocaleDateString('en-GB');
+      const date = new Date(item.dt * 1000).toLocaleDateString("en-GB");
       acc[date] = acc[date] || item; // Добавляем только первый элемент для каждой даты
       return acc;
-    }, {})
+    }, {}),
   ).slice(0, 5); // Берем только 5 дней
 
   return { currentData, forecastArray };

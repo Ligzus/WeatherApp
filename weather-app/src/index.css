@@ -25,10 +25,10 @@ a:hover {
 body {
   margin: auto;
   display: flex;
+  overflow-x: hidden;
   justify-content: center;
   min-width: 100vw;
   min-height: 100vh;
-  overflow-x: hidden;
 }
 
 h1 {

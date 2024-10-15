@@ -11,6 +11,8 @@
     "test": "jest"
   },
   "dependencies": {
+    "babel-plugin-istanbul": "^7.0.0",
+    "glob": "^11.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

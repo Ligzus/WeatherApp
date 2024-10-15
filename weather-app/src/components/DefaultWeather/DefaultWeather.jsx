@@ -15,13 +15,15 @@ function DefaultWeather() {
       try {
         const data = await getDefaultWeather();
 
-        setWeather(DEFAULT_CITIES.map((city, index) => ({
-          city,
-          temp: data[index].main.temp,
-          windSpeed: data[index].wind.speed,
-          humidity: data[index].main.humidity,
-          icon: data[index].weather[0].icon,
-        })));
+        setWeather(
+          DEFAULT_CITIES.map((city, index) => ({
+            city,
+            temp: data[index].main.temp,
+            windSpeed: data[index].wind.speed,
+            humidity: data[index].main.humidity,
+            icon: data[index].weather[0].icon,
+          })),
+        );
 
         setError("");
       } catch (err) {

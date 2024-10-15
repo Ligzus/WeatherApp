@@ -15,21 +15,51 @@ describe("Weather API", () => {
         main: { temp: 15, humidity: 60 },
         wind: { speed: 5 },
         name: "Москва",
-      })
+      }),
     );
 
     // Мокируем ответ для прогноза
     fetch.mockResponseOnce(
       JSON.stringify({
         list: [
-          { dt: 1601529600, main: { temp: 15, humidity: 60 }, wind: { speed: 5 }, weather: [{ icon: "04d" }] },
-          { dt: 1601616000, main: { temp: 18, humidity: 65 }, wind: { speed: 4 }, weather: [{ icon: "02d" }] },
-          { dt: 1601702400, main: { temp: 20, humidity: 70 }, wind: { speed: 3 }, weather: [{ icon: "01d" }] },
-          { dt: 1601788800, main: { temp: 22, humidity: 75 }, wind: { speed: 2 }, weather: [{ icon: "01d" }] },
-          { dt: 1601875200, main: { temp: 19, humidity: 68 }, wind: { speed: 1 }, weather: [{ icon: "02d" }] },
-          { dt: 1601961600, main: { temp: 16, humidity: 65 }, wind: { speed: 2 }, weather: [{ icon: "04d" }] },
+          {
+            dt: 1601529600,
+            main: { temp: 15, humidity: 60 },
+            wind: { speed: 5 },
+            weather: [{ icon: "04d" }],
+          },
+          {
+            dt: 1601616000,
+            main: { temp: 18, humidity: 65 },
+            wind: { speed: 4 },
+            weather: [{ icon: "02d" }],
+          },
+          {
+            dt: 1601702400,
+            main: { temp: 20, humidity: 70 },
+            wind: { speed: 3 },
+            weather: [{ icon: "01d" }],
+          },
+          {
+            dt: 1601788800,
+            main: { temp: 22, humidity: 75 },
+            wind: { speed: 2 },
+            weather: [{ icon: "01d" }],
+          },
+          {
+            dt: 1601875200,
+            main: { temp: 19, humidity: 68 },
+            wind: { speed: 1 },
+            weather: [{ icon: "02d" }],
+          },
+          {
+            dt: 1601961600,
+            main: { temp: 16, humidity: 65 },
+            wind: { speed: 2 },
+            weather: [{ icon: "04d" }],
+          },
         ],
-      })
+      }),
     );
 
     const { currentData, forecastArray } = await getWeather("Москва");
@@ -44,7 +74,9 @@ describe("Weather API", () => {
     fetch.mockResponseOnce("", { status: 404 });
     fetch.mockResponseOnce("", { status: 404 });
 
-    await expect(getWeather("НеверныйГород")).rejects.toThrow("Город не найден");
+    await expect(getWeather("НеверныйГород")).rejects.toThrow(
+      "Город не найден",
+    );
   });
 
   test("getDefaultWeather получает данные о погоде дефолтных городов", async () => {
@@ -54,7 +86,7 @@ describe("Weather API", () => {
         main: { temp: 15, humidity: 60 },
         wind: { speed: 5 },
         name: "Лондон",
-      })
+      }),
     );
 
     fetch.mockResponseOnce(
@@ -63,7 +95,7 @@ describe("Weather API", () => {
         main: { temp: 12, humidity: 80 },
         wind: { speed: 3 },
         name: "Париж",
-      })
+      }),
     );
 
     fetch.mockResponseOnce(
@@ -72,7 +104,7 @@ describe("Weather API", () => {
         main: { temp: -5, humidity: 90 },
         wind: { speed: 1 },
         name: "Саранск",
-      })
+      }),
     );
 
     const data = await getDefaultWeather();
@@ -84,7 +116,6 @@ describe("Weather API", () => {
     expect(data[2].name).toBe("Саранск");
     expect(data[2].main.temp).toBe(-5);
   });
-  
 
   test("getDefaultWeather прокидывает ошибку, если город не найден", async () => {
     fetch.mockResponseOnce("", { status: 404 });
@@ -94,7 +125,7 @@ describe("Weather API", () => {
         main: { temp: 15, humidity: 60 },
         wind: { speed: 5 },
         name: "Париж",
-      })
+      }),
     );
 
     fetch.mockResponseOnce("", { status: 404 });

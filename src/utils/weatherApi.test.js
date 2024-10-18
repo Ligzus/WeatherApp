@@ -67,7 +67,7 @@ describe("Weather API", () => {
     expect(currentData.name).toBe("Москва");
     expect(currentData.main.temp).toBe(15);
     expect(forecastArray).toHaveLength(5);
-    expect(forecastArray[0].main.temp).toBe(18);
+    expect(forecastArray[1].main.temp).toBe(18);
   });
 
   test("getWeather прокидывает ошибку для неизвестного города", async () => {

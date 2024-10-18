@@ -18,13 +18,19 @@ export async function getWeather(city) {
   const currentData = await currentWeatherResponse.json();
   const forecastData = await forecastResponse.json();
 
+  const currentDate = new Date().toLocaleDateString("ru-RU");
+
   const forecastArray = Object.values(
     forecastData.list.reduce((acc, item) => {
       const date = new Date(item.dt * 1000).toLocaleDateString("ru-RU");
-      acc[date] = acc[date] || item;
+
+      // Исключаем сегодняшние данные из прогноза
+      if (date !== currentDate) {
+        acc[date] = acc[date] || item;
+      }
       return acc;
     }, {}),
-  ).slice(1, 6);
+  ).slice(0, 5);
 
   return { currentData, forecastArray };
 }

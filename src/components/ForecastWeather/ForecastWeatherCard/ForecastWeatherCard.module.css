@@ -8,17 +8,16 @@
   justify-content: center;
 }
 
-.forecast p {
-  margin: 0;
-  font-size: 13px;
-}
-
 .forecastTemp {
   width: 74px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 5px;
+  padding: 5px;
+}
+
+.forecast p {
+  margin: 0;
 }
 
 .weather {
@@ -32,7 +31,15 @@
 
 .weather p {
   font-size: 25px;
+}
+
+.weatherBottom {
+  box-sizing: border-box;
+}
+
+.weatherBottom p {
   margin: 0;
+  font-size: 13px;
 }
 
 .forecast img {

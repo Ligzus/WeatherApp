@@ -9,7 +9,7 @@
 
 .forecastContainer {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   overflow-x: auto;
   padding-bottom: 10px;
   justify-content: left;

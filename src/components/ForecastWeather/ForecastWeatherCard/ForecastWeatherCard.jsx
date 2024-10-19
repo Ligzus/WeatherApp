@@ -20,8 +20,10 @@ const ForecastWeatherCard = ({ weather }) => {
         </div>
       </div>
 
-      <p>💨 {weather.windSpeed} м/с</p>
-      <p>💧 {weather.humidity}%</p>
+      <div className={styles.weatherBottom}>
+        <p>💨 {weather.windSpeed} м/с</p>
+        <p>💧 {weather.humidity}%</p>
+      </div>      
     </div>
   );
 };

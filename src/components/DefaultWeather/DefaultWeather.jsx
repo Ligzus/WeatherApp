@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getDefaultWeather } from "../../utils/weatherApi";
 import { DEFAULT_CITIES } from "../../constants/cities";
 import WeatherCard from "../WeatherCard/WeatherCard";

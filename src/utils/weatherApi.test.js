@@ -130,6 +130,8 @@ describe("Weather API", () => {
 
     fetch.mockResponseOnce("", { status: 404 });
 
-    await expect(getDefaultWeather()).rejects.toThrow("Город не найден");
+    await expect(getDefaultWeather()).rejects.toThrow(
+      "Некоторые города не найдены"
+    );
   });
 });

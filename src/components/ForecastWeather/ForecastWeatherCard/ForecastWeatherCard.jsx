@@ -21,9 +21,9 @@ const ForecastWeatherCard = ({ weather }) => {
       </div>
 
       <div className={styles.weatherBottom}>
-        <p>💨 {weather.windSpeed} м/с</p>
+        <p>💨 {weather.windSpeed.toFixed(1)} м/с</p>
         <p>💧 {weather.humidity}%</p>
-      </div>      
+      </div>
     </div>
   );
 };

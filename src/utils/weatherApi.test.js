@@ -15,7 +15,7 @@ describe("Weather API", () => {
         main: { temp: 15, humidity: 60 },
         wind: { speed: 5 },
         name: "Москва",
-      }),
+      })
     );
 
     // Мокируем ответ для прогноза
@@ -59,7 +59,7 @@ describe("Weather API", () => {
             weather: [{ icon: "04d" }],
           },
         ],
-      }),
+      })
     );
 
     const { currentData, forecastArray } = await getWeather("Москва");
@@ -75,7 +75,7 @@ describe("Weather API", () => {
     fetch.mockResponseOnce("", { status: 404 });
 
     await expect(getWeather("НеверныйГород")).rejects.toThrow(
-      "Город не найден",
+      "Город не найден"
     );
   });
 
@@ -86,7 +86,7 @@ describe("Weather API", () => {
         main: { temp: 15, humidity: 60 },
         wind: { speed: 5 },
         name: "Лондон",
-      }),
+      })
     );
 
     fetch.mockResponseOnce(
@@ -95,7 +95,7 @@ describe("Weather API", () => {
         main: { temp: 12, humidity: 80 },
         wind: { speed: 3 },
         name: "Париж",
-      }),
+      })
     );
 
     fetch.mockResponseOnce(
@@ -104,7 +104,7 @@ describe("Weather API", () => {
         main: { temp: -5, humidity: 90 },
         wind: { speed: 1 },
         name: "Саранск",
-      }),
+      })
     );
 
     const data = await getDefaultWeather();
@@ -125,7 +125,7 @@ describe("Weather API", () => {
         main: { temp: 15, humidity: 60 },
         wind: { speed: 5 },
         name: "Париж",
-      }),
+      })
     );
 
     fetch.mockResponseOnce("", { status: 404 });

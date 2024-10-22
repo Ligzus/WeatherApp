@@ -5,8 +5,9 @@ function SearchBar({ onSearch }) {
   const [city, setCity] = useState("");
 
   const handleSearch = () => {
-    if (city.trim()) {
-      onSearch(city);
+    const trimmedCity = city.trim();
+    if (trimmedCity) {
+      onSearch(trimmedCity);
       setCity("");
     }
   };

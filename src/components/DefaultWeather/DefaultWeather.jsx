@@ -22,7 +22,7 @@ function DefaultWeather() {
             windSpeed: data[index].wind.speed,
             humidity: data[index].main.humidity,
             icon: data[index].weather[0].icon,
-          })),
+          }))
         );
 
         setError("");

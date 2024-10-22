@@ -15,7 +15,7 @@ const mockWeather = {
 describe("WeatherCard", () => {
   test("компонент WeatherCard отображает данные о погоде", () => {
     const { getByText, getByAltText } = render(
-      <WeatherCard weather={mockWeather} />,
+      <WeatherCard weather={mockWeather} />
     );
 
     // Проверяем, что название города отображается
@@ -34,7 +34,7 @@ describe("WeatherCard", () => {
     const weatherIcon = getByAltText("weather icon");
     expect(weatherIcon).toHaveAttribute(
       "src",
-      "http://openweathermap.org/img/wn/04d.png",
+      "http://openweathermap.org/img/wn/04d.png"
     );
   });
 });

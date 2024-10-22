@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getDefaultWeather } from "../../utils/weatherApi";
 import { DEFAULT_CITIES } from "../../constants/cities";
 import WeatherCard from "../WeatherCard/WeatherCard";
@@ -27,7 +27,7 @@ function DefaultWeather() {
 
         setError("");
       } catch (err) {
-        setError("Что-то сломалось, попробуй позже");
+        setError(err.message || "Что-то сломалось, попробуй позже");
       } finally {
         setLoading(false);
       }

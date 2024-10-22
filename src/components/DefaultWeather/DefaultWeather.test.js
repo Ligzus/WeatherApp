@@ -1,4 +1,3 @@
-import React from "react"; // Добавь этот импорт
 import { render, act } from "@testing-library/react";
 import DefaultWeather from "./DefaultWeather";
 

@@ -43,13 +43,13 @@ export async function getDefaultWeather() {
       )
     );
 
-    if (responses.some((response) => !response.ok)) {
-      throw new Error("Город не найден");
+    const errors = responses.filter((response) => !response.ok);
+    if (errors.length > 0) {
+      throw new Error("Некоторые города не найдены");
     }
 
-    // Возвращаем массив данных о погоде
     return await Promise.all(responses.map((res) => res.json()));
   } catch (error) {
-    throw new Error("Город не найден");
+    throw new Error(error.message);
   }
 }

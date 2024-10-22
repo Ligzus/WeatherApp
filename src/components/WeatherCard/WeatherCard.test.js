@@ -1,4 +1,3 @@
-import React from "react";
 import { render } from "@testing-library/react";
 import WeatherCard from "./WeatherCard";
 import "@testing-library/jest-dom/";

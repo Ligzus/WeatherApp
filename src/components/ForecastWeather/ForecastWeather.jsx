@@ -1,7 +1,7 @@
 import styles from "./ForecastWeather.module.css";
-import ForecastWeatherCard from "./ForecastWeatherCard/ForecastWeatherCard";
+import { ForecastWeatherCard } from "./ForecastWeatherCard/ForecastWeatherCard";
 
-const ForecastWeather = ({ weather }) => {
+export const ForecastWeather = ({ weather }) => {
   return (
     <div className={styles.forecastWeather}>
       <div className={styles.forecastContainer}>
@@ -12,5 +12,3 @@ const ForecastWeather = ({ weather }) => {
     </div>
   );
 };
-
-export default ForecastWeather;

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { getDefaultWeather } from "../../utils/weatherApi";
+import { getDefaultWeather } from "../../api/weatherApi";
 import { DEFAULT_CITIES } from "../../constants/cities";
-import WeatherCard from "../WeatherCard/WeatherCard";
+import { WeatherCard } from "../WeatherCard/WeatherCard";
 import styles from "./DefaultWeather.module.css";
 
-function DefaultWeather() {
+export function DefaultWeather() {
   const [weather, setWeather] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -52,5 +52,3 @@ function DefaultWeather() {
     </div>
   );
 }
-
-export default DefaultWeather;

@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { getWeather } from "../../utils/weatherApi";
-import WeatherCard from "../WeatherCard/WeatherCard";
-import SearchBar from "../SearchBar/SearchBar";
+import { getWeather } from "../../api/weatherApi";
+import { WeatherCard } from "../WeatherCard/WeatherCard";
+import { SearchBar } from "../SearchBar/SearchBar";
 import styles from "./CityWeather.module.css";
-import ForecastWeather from "../ForecastWeather/ForecastWeather";
+import { ForecastWeather } from "../ForecastWeather/ForecastWeather";
 
-function CityWeather() {
+export function CityWeather() {
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -58,5 +58,3 @@ function CityWeather() {
     </div>
   );
 }
-
-export default CityWeather;

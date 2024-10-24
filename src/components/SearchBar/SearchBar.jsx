@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./SearchBar.module.css";
 
-function SearchBar({ onSearch }) {
+export function SearchBar({ onSearch }) {
   const [city, setCity] = useState("");
 
   const handleSearch = () => {
@@ -27,5 +27,3 @@ function SearchBar({ onSearch }) {
     </div>
   );
 }
-
-export default SearchBar;

@@ -1,6 +1,6 @@
 import styles from "./ForecastWeatherCard.module.css";
 
-const ForecastWeatherCard = ({ weather }) => {
+export const ForecastWeatherCard = ({ weather }) => {
   const timestamp = weather.date * 1000;
   const date = new Date(timestamp);
   const formattedDate = `${date.getDate().toString().padStart(2, "0")}.${(date.getMonth() + 1).toString().padStart(2, "0")}`;
@@ -26,5 +26,3 @@ const ForecastWeatherCard = ({ weather }) => {
     </div>
   );
 };
-
-export default ForecastWeatherCard;

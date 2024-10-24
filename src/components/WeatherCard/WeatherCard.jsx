@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./WeatherCard.module.css";
 
-const WeatherCard = ({ weather }) => {
+export const WeatherCard = ({ weather }) => {
   return (
     <div className={styles.card}>
       <div className={styles.city}>
@@ -23,5 +23,3 @@ const WeatherCard = ({ weather }) => {
     </div>
   );
 };
-
-export default WeatherCard;

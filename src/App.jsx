@@ -1,5 +1,5 @@
-import CityWeather from "./components/CityWeather/CityWeather";
-import DefaultWeather from "./components/DefaultWeather/DefaultWeather";
+import { CityWeather } from "./components/CityWeather/CityWeather";
+import { DefaultWeather } from "./components/DefaultWeather/DefaultWeather";
 
 function App() {
   return (
